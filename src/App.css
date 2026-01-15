@@ -1,0 +1,114 @@
+.app {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+:root{ 
+  --primary: #007bff;
+  --primary-darker: #0153ab;  
+  --surface-card: white;
+  --text-primary: black;
+  --text-disabled: lightgray;
+  --text-onDarker: white;
+  --spacing-xs: 0.3rem;
+  --spacing-md: 1rem;
+  --fontsize-md: 1.5rem;
+  --fontsize-xl: 2.5rem;
+}
+
+/* Card Container */
+.pricing{ 
+  display: grid;
+  grid-template-columns: auto auto auto;
+  color: var(--text-primary);
+  gap: var(--spacing-md);
+
+  @media(max-width: 768px){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+.card{
+  display: flex;
+  flex-direction:column;
+  background-color: var(--surface-card);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: solid 4px lightgray;
+}
+
+.card__price{
+  font-size: var(--fontsize-xl);
+
+  sup{
+    font-size: 1rem;
+  }
+}
+
+.card__title{
+  font-size: var(--fontsize-md);
+}
+
+.card__features{
+  flex-grow: 1;
+}
+
+.card__cta{
+  padding: var(--spacing-md);
+
+  button{
+    all: unset;
+    color: var(--text-onDarker);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--primary);
+    border-radius: 8px;
+    transition: all 0.2s ease-in;
+    
+    &:hover{
+      box-shadow: 1px 1px 1px rgba(256 256 256 / 0.8);
+      background-color: var(--primary-darker);
+      cursor: pointer;
+    }
+    &focus-visible{
+      outline: solid 1px gray;
+    }
+  }
+}
+
+.features__list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+
+  li {
+    display: block;
+  }
+}
+
+.feature--notIncluded{
+  color: var(--text-disabled);
+}
+
+.pro{
+  position: relative;
+
+  &::after{
+    content: 'Popular';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary);
+    color: var(--text-onDarker);
+    padding: var(--spacing-xs);
+    width: 300px;
+    border-radius: 4px;
+    transform: rotate(45deg) translate(90px, -75px);
+  }
+}
+
