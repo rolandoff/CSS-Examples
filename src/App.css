@@ -19,14 +19,6 @@
   --fontsize-xl: 2.5rem;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  border: 0;
-  font: inherit;
-}
-
 /* Card Container */
 .pricing{ 
   display: grid;
