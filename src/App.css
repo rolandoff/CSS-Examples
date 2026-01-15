@@ -3,9 +3,10 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: var(--spacing-md);
 }
 
-:root{ 
+:root{
   --primary: #007bff;
   --primary-darker: #0153ab;  
   --surface-card: white;
@@ -16,6 +17,14 @@
   --spacing-md: 1rem;
   --fontsize-md: 1.5rem;
   --fontsize-xl: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  font: inherit;
 }
 
 /* Card Container */
@@ -62,11 +71,11 @@
   padding: var(--spacing-md);
 
   button{
-    all: unset;
     color: var(--text-onDarker);
     padding: var(--spacing-xs) var(--spacing-md);
     background-color: var(--primary);
     border-radius: 8px;
+    width: 100%;
     transition: all 0.2s ease-in;
     
     &:hover{
@@ -74,7 +83,7 @@
       background-color: var(--primary-darker);
       cursor: pointer;
     }
-    &focus-visible{
+    &:focus-visible{
       outline: solid 1px gray;
     }
   }
@@ -103,7 +112,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--primary);
+    background-color: var(--base-red-600);
     color: var(--text-onDarker);
     padding: var(--spacing-xs);
     width: 300px;
